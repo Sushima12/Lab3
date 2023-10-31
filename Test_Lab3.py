@@ -1,5 +1,6 @@
 import Lab3
 
+
 print("Test_Lab3")
 
 
@@ -23,8 +24,21 @@ def test_bubble_sort_descending():
 
 def test_bubble_sort_invalid():
     result = []
-    input_arr = [64, 34, 25, 12, 22, 11, 90]
+    input_arr = [64, 34, 25, 12, 22.2, 11, 90]
 
     result = Lab3.bubble_sort(input_arr, 3)
 
-    assert (result == [])
+    assert (result == 2)
+
+def test_bubble_sort_more_than_equal_ten():
+    result = []
+    input_arr = [64, 34, 25, 12, 22, 11, 90, 80, 20, 15,18]
+
+    result = Lab3.bubble_sort(input_arr, 3)
+    assert (result == 1)
+
+def test_bubble_sort_zero_numbers():
+    result = []
+    input_arr = []
+    result = Lab3.bubble_sort(input_arr, 3)
+    assert (result == 0)
