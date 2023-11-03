@@ -14,25 +14,28 @@ def get_employees_by_age_range(age_lower_limit, age_upper_limit):
     # check for age limits and append the item to result
     for item in employee_data:
         if int(item["age"]) > int(age_lower_limit) and int(item["age"]) < int(age_upper_limit):
-            result.append(item)
-
+            result.append(item) # Adds item to result list
+            #age will be first, followed by department, name, and salary
+            # keys are in alphabetical order
     return result
-
 def calculate_average_salary():
     total = 0
     average = 0
-
     #add your implementation to calculate here
+    n = len(employee_data)
+    for item in employee_data:# Access Dictionary
 
+        total += int(item["salary"])
 
+    average = total / n
     return average
 
 def get_employees_by_dept(department):
     result = []
-
     # Add your implementation from here
-
-
+    for item in employee_data:
+        if item["department"] == department:
+            result.append(item)
     return result
 
 def display_all_records():
